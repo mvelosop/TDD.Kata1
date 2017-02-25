@@ -25,5 +25,18 @@ namespace Kata1.Tests
 			// Assert
 			result.Should().Be(0);
 		}
+
+		[Fact]
+		public void Add_WhenOneNumber_ReturnsValue()
+		{
+			// Arrange
+			var calc = new StringCalculator();
+
+			// Act
+			int result = calc.Add("1");
+
+			// Assert
+			result.Should().Be(1);
+		}
 	}
 }
