@@ -5,10 +5,15 @@ using System.Threading.Tasks;
 
 namespace Kata1
 {
-    public class StringCalculator
-    {
-        public StringCalculator()
-        {
-        }
-    }
+	public class StringCalculator
+	{
+		public StringCalculator()
+		{
+		}
+
+		public int Add(string numbers)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

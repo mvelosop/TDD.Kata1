@@ -12,5 +12,18 @@ namespace Kata1.Tests
 		public StringCalculator_Tests()
 		{
 		}
+
+		[Fact]
+		public void Add_WhenEmptyInput_ReturnsZero()
+		{
+			// Arrange
+			var calc = new StringCalculator();
+
+			// Act
+			int result = calc.Add("");
+
+			// Assert
+			result.Should().Be(0);
+		}
 	}
 }
