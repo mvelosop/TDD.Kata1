@@ -16,6 +16,7 @@ namespace Kata1.Tests
 		[Theory]
 		[InlineData(0, "")]
 		[InlineData(1, "1")]
+		[InlineData(3, "1, 2")]
 		public void Add_WhenValidInput_ReturnsSum(int expected, string input)
 		{
 			// Arrange
