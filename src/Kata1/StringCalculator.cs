@@ -14,6 +14,13 @@ namespace Kata1
 		{
 			IEnumerable<int> numberList = GetNumberList(numbers);
 
+			if (numberList.Any(n => n < 0))
+			{
+				string negativesMessage = string.Join(", ", numberList.Select(n => n < 0));
+
+				throw new Exception($"negatives not allowed: {negativesMessage}");
+			}
+
 			return numberList.Sum();
 		}
 
