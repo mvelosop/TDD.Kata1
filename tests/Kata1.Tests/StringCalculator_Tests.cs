@@ -32,5 +32,20 @@ namespace Kata1.Tests
 			// Assert
 			result.Should().Be(expected);
 		}
+
+		[Theory]
+		[InlineData("-3", "1, 2, -3")]
+		[InlineData("-3, -4", "1, 2, -3, -4")]
+		public void Add_WhenNegatives_ThrowsExceptionMessage(string expected, string input)
+		{
+			// Arrange
+			var calc = new StringCalculator();
+
+			// Act
+			Action act = () => calc.Add(input);
+
+			// Assert
+			act.ShouldThrow<Exception>("because negatives are not allowed").Which.Message.Contains(expected);
+		}
 	}
 }
