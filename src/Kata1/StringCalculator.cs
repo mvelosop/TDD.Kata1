@@ -13,7 +13,7 @@ namespace Kata1
 
 		public int Add(string numbers)
 		{
-			throw new NotImplementedException();
+			return 0;
 		}
 	}
 }
