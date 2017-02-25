@@ -38,5 +38,20 @@ namespace Kata1.Tests
 			// Assert
 			result.Should().Be(1);
 		}
+
+		[Theory]
+		[InlineData(0, "")]
+		[InlineData(1, "1")]
+		public void Add_WhenValidInput_ReturnsSum(int expected, string input)
+		{
+			// Arrange
+			var calc = new StringCalculator();
+
+			// Act
+			int result = calc.Add(input);
+
+			// Assert
+			result.Should().Be(expected);
+		}
 	}
 }
