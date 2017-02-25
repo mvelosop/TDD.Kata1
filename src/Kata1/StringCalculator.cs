@@ -18,7 +18,7 @@ namespace Kata1
 				return 0;
 			}
 
-			int[] numberList = numbers.Split(',').Select(n => int.Parse(n)).ToArray();
+			int[] numberList = numbers.Split(',', '\n').Select(n => int.Parse(n)).ToArray();
 
 			return numberList.Sum();
 		}
