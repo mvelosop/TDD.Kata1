@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Kata1
 {
@@ -13,9 +12,16 @@ namespace Kata1
 
 		public int Add(string numbers)
 		{
+			IEnumerable<int> numberList = GetNumberList(numbers);
+
+			return numberList.Sum();
+		}
+
+		private IEnumerable<int> GetNumberList(string numbers)
+		{
 			if (string.IsNullOrWhiteSpace(numbers))
 			{
-				return 0;
+				return new[] { 0 };
 			}
 
 			char[] seps = new[] { ',', '\n' };
@@ -23,12 +29,11 @@ namespace Kata1
 			if (numbers.StartsWith("//"))
 			{
 				seps = new[] { numbers[2] };
+
 				numbers = numbers.Substring(4);
 			}
 
-			int[] numberList = numbers.Split(seps).Select(n => int.Parse(n)).ToArray();
-
-			return numberList.Sum();
+			return numbers.Split(seps).Select(n => int.Parse(n));
 		}
 	}
 }
