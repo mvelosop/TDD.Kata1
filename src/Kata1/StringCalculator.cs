@@ -18,17 +18,16 @@ namespace Kata1
 				return 0;
 			}
 
-			int pos = numbers.IndexOf(',');
+			string[] numberList = numbers.Split(',');
 
-			if (pos == -1)
+			int result = 0;
+
+			foreach (var number in numberList)
 			{
-				return int.Parse(numbers);
+				result += int.Parse(number);
 			}
 
-			string x = numbers.Substring(0, pos);
-			string y = numbers.Substring(pos + 1);
-
-			return int.Parse(x) + int.Parse(y);
+			return result;
 		}
 	}
 }
