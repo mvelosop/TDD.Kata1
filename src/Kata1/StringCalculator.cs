@@ -18,16 +18,9 @@ namespace Kata1
 				return 0;
 			}
 
-			string[] numberList = numbers.Split(',');
+			int[] numberList = numbers.Split(',').Select(n => int.Parse(n)).ToArray();
 
-			int result = 0;
-
-			foreach (var number in numberList)
-			{
-				result += int.Parse(number);
-			}
-
-			return result;
+			return numberList.Sum();
 		}
 	}
 }
